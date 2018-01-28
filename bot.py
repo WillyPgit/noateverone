@@ -26,7 +26,9 @@ async def on_message(message):
 
         stripped = "".join([x for x in message.content if ord(x) < 128]).lower()
         if any([word in stripped for word in profs]): #deletes any message that contains profanity
-                await client.send_message(message.channel, "profanities are not allowed on this server")
+                mymessage = await client.send_message(message.channel, "profanities are not allowed on this server")
                 await client.delete_message(message)
+                await asyncio.sleep(5)
+                await client.delete_message(mymessage)
 
 client.run(tok)

@@ -1,0 +1,1 @@
+profs = ["fuck", "shit", "dick", "cunt", "nigger", "nigga", "fuk", "bitch", "cock", "pussy", "asshole", "fag", "faggot", "ass", "hoe", "slut", "whore"]

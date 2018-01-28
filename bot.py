@@ -19,8 +19,10 @@ async def on_ready(): #prints log in info
 @client.event
 async def on_message(message):
         if message.mention_everyone: #deletes any message that contains the string @everyone
-                await client.send_message(message.channel, "@\uFEFFeveryone is disabled on this server")
+                await mymessage = client.send_message(message.channel, "@\uFEFFeveryone is disabled on this server")
                 await client.delete_message(message)
+                await asyncio.sleep(5)
+                await client.delete_message(mymessage)
 
         stripped = "".join([x for x in message.content if ord(x) < 128]).lower()
         if any([word in stripped for word in profs]): #deletes any message that contains profanity

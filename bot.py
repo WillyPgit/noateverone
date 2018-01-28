@@ -19,7 +19,7 @@ async def on_ready(): #prints log in info
 @client.event
 async def on_message(message):
         if message.mention_everyone: #deletes any message that contains the string @everyone
-                await client.send_message(message.channel, "\\@everyone is disabled on this server")
+                await client.send_message(message.channel, "@\uFEFFeveryone is disabled on this server")
                 await client.delete_message(message)
 
         stripped = "".join([x for x in message.content if ord(x) < 128]).lower()

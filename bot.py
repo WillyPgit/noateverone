@@ -58,7 +58,7 @@ async def on_message(message):
                         await client.delete_message(mymessage) #deletes confirmation message
 
         if message.mention_everyone: #deletes any message that contains the string @everyone
-<<<<<<< HEAD
+
                 
                 data = json.load(open("prefs.json"))
                 if data[str(message.server)]["everyone_disabled"] == True:

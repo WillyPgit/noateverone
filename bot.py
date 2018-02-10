@@ -58,6 +58,7 @@ async def on_message(message):
                         await client.delete_message(mymessage) #deletes confirmation message
 
         if message.mention_everyone: #deletes any message that contains the string @everyone
+<<<<<<< HEAD
                 
                 data = json.load(open("prefs.json"))
                 if data[str(message.server)]["everyone_disabled"] == True:
@@ -116,5 +117,13 @@ async def on_message(message):
                         await client.delete_message(message) #deletes the message containing profanity
                         await asyncio.sleep(5)
                         await client.delete_message(mymessage) #deletes the warning message after 5 seconds
+                        
+        stripped = "".join([x for x in message.content if ord(x) < 128]).lower()
+        if any([word in stripped for word in profs]): #deletes any message that contains profanity
+                mymessage = await client.send_message(message.channel, "```profanities are not allowed on this server```")
+                await client.delete_message(message)
+                await asyncio.sleep(5)
+                await client.delete_message(mymessage)
+>>>>>>> 6f370bd9b6badd2e9a5c741acf43033caa2f7d6b
 
 client.run(tok)
